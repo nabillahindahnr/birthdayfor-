@@ -169,7 +169,7 @@
     .photo-caption {
       margin-top: 14px;
       font-family: 'Caveat', cursive;
-      font-size: 24px;
+      font-size: 22px;
       color: #1e293b;
     }
 
@@ -253,7 +253,7 @@
     /* Page 5 - Final Celebration */
     .final-title {
       font-family: 'Caveat', cursive;
-      font-size: 44px;
+      font-size: 40px;
       line-height: 1.2;
       color: #fb7185;
       text-shadow: 0 0 20px rgba(251, 113, 133, 0.5);
@@ -387,25 +387,22 @@ I am so glad to have known and met you. I hope that in the next chapters of our 
     // --- Data Photos & Captions ---
     const photos = [
       {
-        url: "https://drive.google.com/file/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV/view?usp=share_link", 
-        caption: "My favorite photo of uu"
+        url: "https://lh3.googleusercontent.com/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV", 
+        caption: "My favorite photo of him"
       },
       {
-        url: "https://drive.google.com/file/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV/view?usp=share_link",
-        caption: "Look at your eyes, so narrow like a Chinese person hahaha"
+        url: "https://lh3.googleusercontent.com/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV",
+        caption: "Look at your eyes, so narrow like a Chinese person"
       },
       {
-        url: "https://drive.google.com/file/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV/view?usp=share_link",
-        caption: "We look like we are inside a bird cage lol"
+        url: "https://lh3.googleusercontent.com/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV",
+        caption: "We look like we are inside a bird cage"
       },
       {
-        url: "https://drive.google.com/file/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV/view?usp=share_link",
-        caption: "This is the funniest pict of u haha"
+        url: "https://lh3.googleusercontent.com/d/1XD3jgVRDI2P0gttjwheJJDxA5NFjOxyV",
+        caption: "This is the funniest picture haha"
       }
     ];
-
-    // Gunakan gambar yang diunggah pengguna (Base64 atau link yang dipersiapkan)
-    // Silakan ganti URL di atas dengan nama file foto kamu jika ditempatkan di folder yang sama di GitHub (contoh: 'foto1.jpg')
 
     let currentPage = 1;
     const totalPages = 5;
@@ -453,7 +450,6 @@ I am so glad to have known and met you. I hope that in the next chapters of our 
       imgEl.src = photos[currentPhotoIdx].url;
       capEl.innerText = photos[currentPhotoIdx].caption;
 
-      // Update dots
       const dots = document.querySelectorAll('.dot');
       dots.forEach((dot, idx) => {
         dot.classList.toggle('active', idx === currentPhotoIdx);
@@ -491,7 +487,7 @@ I am so glad to have known and met you. I hope that in the next chapters of our 
       }
     }
 
-    // --- Romantic Happy Birthday Web Audio Synthesizer (No External File Needed) ---
+    // --- Romantic Happy Birthday Web Audio Synthesizer ---
     let audioCtx = null;
     let isPlaying = false;
     let timeoutIds = [];
@@ -526,7 +522,7 @@ I am so glad to have known and met you. I hope that in the next chapters of our 
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
 
-      osc.type = 'triangle'; // Soft piano/musicbox tone
+      osc.type = 'triangle';
       osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 
       gain.gain.setValueAtTime(0, audioCtx.currentTime);
@@ -552,7 +548,6 @@ I am so glad to have known and met you. I hope that in the next chapters of our 
         delay += n.duration * 0.95;
       });
 
-      // Loop melody
       let totalTime = delay * 1000 + 1000;
       let loopId = setTimeout(() => {
         if (isPlaying) playMelodySequence();
